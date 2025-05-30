@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "post": {
+      "type": "string"
+    }
+  },
+  "required": ["post"],
+  "additionalProperties": false
+}
