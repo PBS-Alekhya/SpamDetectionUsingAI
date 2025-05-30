@@ -1,0 +1,7 @@
+{
+  "model_name": "spam_detector",
+  "version": "1.0.0",
+  "threshold": 0.35,
+  "labels": ["spam", "not_spam"],
+  "log_predictions": true
+}
