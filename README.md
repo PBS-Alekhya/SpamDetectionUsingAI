@@ -1,1 +1,1 @@
-# SpamDetectionUsingAI
+# SpamDetection Using AI
