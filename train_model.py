@@ -1,13 +1,13 @@
 # train_model.py
 import pandas as pd
 import joblib
-
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
 from app.preprocessor import Preprocessor, NORMALIZATION_DICT, HINGLISH_STOP_WORDS
+from sklearn.metrics import classification_report
 import os
 
 
@@ -27,9 +27,9 @@ X_train, X_test, y_train, y_test = train_test_split(df["post"], y, test_size=0.2
 pipeline = Pipeline([
     ("preprocessor", Preprocessor(NORMALIZATION_DICT)),
     ("tfidf", TfidfVectorizer(
-        stop_words=HINGLISH_STOP_WORDS,
-        max_features=5000,
-        token_pattern=r"(?u)\b[a-z]{3,15}\b"
+        max_features=7000,
+        ngram_range=(1, 2),
+        token_pattern=r"(?u)\b\w+\b|[^\w\s]"
     )),
     ("clf", LogisticRegression())
 ])
@@ -40,8 +40,10 @@ pipeline.fit(X_train, y_train)
 # Evaluate the model
 acc = pipeline.score(X_test, y_test)
 print(f" Accuracy: {acc:.4f}")
+y_pred = pipeline.predict(X_test)
+print(classification_report(y_test, y_pred))
 
 # Save model pipeline
 os.makedirs("app/model", exist_ok=True)
 joblib.dump(pipeline, "app/model/model.joblib")
-# print(" Pipeline saved to app/model/model.joblib")
+print(" Pipeline saved to app/model/model.joblib")
