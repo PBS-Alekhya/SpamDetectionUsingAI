@@ -1,5 +1,5 @@
 import re
-# import string
+import emoji
 from sklearn.base import BaseEstimator, TransformerMixin
 
 # Hinglish Dictionary for  Normalization 
@@ -19,7 +19,7 @@ NORMALIZATION_DICT = {
     "bahut": "very", "zyada": "very", "accha": "good", "achha": "good", "mast": "great",
     "bindaas": "cool", "best": "best", "urgent": "urgent", "important": "important", "last": "last",
     "chance": "chance", "limited": "limited", "alert": "alert", "verify": "verify", "otp": "otp",
-    "account": "account", "block": "block", "blocked": "blocked"
+    "account": "account", "block": "block", "blocked": "blocked", 'pls':'please'
 }
 
 # stopwords in Hindi and english
@@ -56,10 +56,14 @@ class Preprocessor(BaseEstimator, TransformerMixin):
             text = str(text)
         text = text.lower()
         text = re.sub(r"http\S+|www\S+|https\S+", "<URL>", text)
-        text = re.sub(r'[^\w\s<>]', '', text)
+        text = ''.join(c for c in text if c.isalnum() or c.isspace() or emoji.is_emoji(c) or c in ['<', '>'])
         text = re.sub(r'\b[a-zA-Z]*\d+[a-zA-Z]*\b', '', text)
         text = re.sub(r'\b\d+\b', '', text)
+        text = re.sub(r'(.)\1{2,}', r'\1\1', text)
         text = re.sub(r'\s+', ' ', text).strip()
         words = text.split()
         normalized = [self.norm_dict.get(word, word) for word in words]
-        return " ".join(normalized)
+        filtered = [word for word in normalized if word not in HINGLISH_STOP_WORDS]
+        if not filtered:
+            return "<EMPTY>"
+        return " ".join(filtered)
