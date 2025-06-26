@@ -1,8 +1,4 @@
-pandas
-scikit-learn
-joblib
 fastapi
-uvicornfastapi
 uvicorn
 scikit-learn
 pandas
@@ -11,3 +7,4 @@ joblib
 pydantic
 pytest
 httpx
+emoji>=2.0.0
