@@ -1,35 +1,49 @@
 # Author : P.B.S.Alekhya
-# date : 27 May 2025
-# # last change: 28 may 2025
+
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from app.generator import load_model, load_config, predict_label
 import traceback
+from app.logger import app_logger
 
 # Initialize FastAPI app
 app = FastAPI()
 
+logger = app_logger
 # Load config and model at startup
 try:
     config = load_config()
     model = load_model()
+    logger.info("Startup successful: Model and config loaded.")
 except Exception as e:
-    print(" Startup failed:", e)
+    logger.error("Startup failed", exc_info=True)
     raise SystemExit("App failed to start due to config or model error.")
 
 # Define input schema
 class PostInput(BaseModel):
     post: str
 
+
+# main page
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Spam Detection API"}
+
+
 @app.post("/predict")
 def predict(post_input: PostInput):
+    if not post_input.post.strip():  
+        raise HTTPException(status_code=400, detail="Post input cannot be empty.")
     try:
+        logger.info(f"New prediction request: {post_input.post}")
         result = predict_label(post_input.post, model, config)
         return result
     except Exception as e:
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error("Prediction error", exc_info=True)
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
 
 @app.get("/health")
 def health():
