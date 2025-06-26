@@ -1,0 +1,41 @@
+[2025-06-22 16:00:05] Input: win the free rechrage  | Prediction: {'label': 'spam', 'confidence': 0.9283}
+[2025-06-22 16:03:08] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:11] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:11] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:12] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:12] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:12] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:13] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:13] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:13] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:13] Input: ka ki ke the and is | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:35] Input:  123 | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:39] Input:  123 | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:40] Input:  123 | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:45] Input:  @123 | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:03:53] Input:  3 | Prediction: {'label': 'spam', 'confidence': 0.9544}
+[2025-06-22 16:04:14] Input: hello, how are you | Prediction: {'label': 'not_spam', 'confidence': 0.7151}
+[2025-06-22 16:05:26] Input: ka ki ke the and is | Prediction: {'label': 'not_spam', 'confidence': 0.7854}
+[2025-06-22 16:05:29] Input: ka ki ke the and is | Prediction: {'label': 'not_spam', 'confidence': 0.7854}
+[2025-06-22 16:05:30] Input: ka ki ke the and is | Prediction: {'label': 'not_spam', 'confidence': 0.7854}
+[2025-06-22 16:32:37] Input: Free recharge, click here! | Prediction: {'label': 'spam', 'confidence': 0.9952}
+[2025-06-22 16:32:37] Input: Hello, how are you? | Prediction: {'label': 'not_spam', 'confidence': 0.7092}
+[2025-06-22 16:33:43] Input: Win free recharge now! | Prediction: {'label': 'spam', 'confidence': 0.9574}
+[2025-06-22 16:35:45] Input: ka ki ke se aur the is was | Prediction: {'label': 'not_spam', 'confidence': 0.7569}
+[2025-06-22 16:37:20] Input: hai ka ki ke se na bhi ye wo ho kar | Prediction: {'label': 'not_spam', 'confidence': 0.9507}
+[2025-06-22 17:14:33] Input: Free recharge, click here! | Prediction: {'label': 'spam', 'confidence': 0.9952}
+[2025-06-22 17:14:33] Input: Hello, how are you? | Prediction: {'label': 'not_spam', 'confidence': 0.7092}
+[2025-06-22 17:14:42] Input: Win free recharge now! | Prediction: {'label': 'spam', 'confidence': 0.9574}
+[2025-06-24 12:26:21] Input: Free recharge, click here! | Prediction: {'label': 'spam', 'confidence': 0.9003}
+[2025-06-24 12:26:21] Input: Hello, how are you? | Prediction: {'label': 'not_spam', 'confidence': 0.6878}
+[2025-06-24 12:26:34] Input: Win free recharge now! | Prediction: {'label': 'spam', 'confidence': 0.765}
+[2025-06-26 11:06:50] This is a prediction log.
+[2025-06-26 11:06:50] Input: Free recharge | Prediction: spam
+[2025-06-26 11:07:31] This is a prediction log.
+[2025-06-26 11:07:31] Input: Free recharge | Prediction: spam
+[2025-06-26 11:08:48] This is a prediction log.
+[2025-06-26 11:08:48] Input: Free recharge | Prediction: spam
+[2025-06-26 11:14:06] Input: congratulations for winning iPhone | Prediction: {'label': 'not_spam', 'confidence': 0.5969}
+[2025-06-26 11:14:12] Input: congratulations for winning iPhone | Prediction: {'label': 'not_spam', 'confidence': 0.5969}
+[2025-06-26 11:17:33] Input: Hello Alekhya, How are you | Prediction: {'label': 'not_spam', 'confidence': 0.6878}
+[2025-06-26 11:19:03] Input: congratulations Alekhya for winning Rs.5000 worth voucher | Prediction: {'label': 'spam', 'confidence': 0.4331}
