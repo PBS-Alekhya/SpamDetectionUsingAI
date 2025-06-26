@@ -19,11 +19,11 @@ def test_health():
 def test_predict_spam():
     response = client.post("/predict", json={"post": "Free recharge, click here!"})
     assert response.status_code == 200
-    assert "Prediction" in response.json()
+    assert "label" in response.json()
     assert "confidence" in response.json()
 
 def test_predict_not_spam():
     response = client.post("/predict", json={"post": "Hello, how are you?"})
     assert response.status_code == 200
-    assert "Prediction" in response.json()
+    assert "label" in response.json()
     assert "confidence" in response.json()
